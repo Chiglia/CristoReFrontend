@@ -1,16 +1,14 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Nav } from './pages/common-components/nav/nav';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Nav],
   template: `
-    <h1>Welcome to {{ title() }}!</h1>
-
+    <app-nav></app-nav>
     <router-outlet />
   `,
   styles: [],
 })
-export class App {
-  protected readonly title = signal('client');
-}
+export class App {}
