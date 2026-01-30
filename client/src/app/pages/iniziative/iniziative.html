@@ -1,1 +1,19 @@
-<p class="mt-8">iniziative works!</p>
+<div class="mt-3">
+  <p-carousel
+    [value]="iniziative"
+    [numVisible]="1"
+    [numScroll]="1"
+    [circular]="true"
+    autoplayInterval="5000"
+    [showIndicators]="false"
+    [showNavigators]="false"
+  >
+    <ng-template let-iniziative #item>
+      <div
+        class="relative relative min-h-screen bg-cover bg-center"
+        style="background-attachment: fixed"
+        [style.background-image]="'url(' + iniziative.image + ')'"
+      ></div>
+    </ng-template>
+  </p-carousel>
+</div>
