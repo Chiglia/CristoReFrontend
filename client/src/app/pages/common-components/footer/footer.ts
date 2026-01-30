@@ -4,12 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-footer',
   imports: [],
   template: `
-    <p>
-      footer works!
-    </p>
+    <div class="w-full bg-primary text-center p-4 mt-4">by @Commissione Comunicazione</div>
   `,
   styles: ``,
 })
-export class Footer {
-
-}
+export class Footer {}

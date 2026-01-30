@@ -1,13 +1,67 @@
 <div
-  class="relative min-h-screen bg-cover bg-center"
+  class="chiesa relative min-h-screen bg-cover bg-center"
+  [attr.data-theme]="themeService.theme()"
   style="
     display: grid;
     place-items: center;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 80%, 0% 100%);
-    background-image: url('chiesa4.jpg');
     background-attachment: fixed;
+    background-image: url(chiesa3.jpg);
   "
 >
-  <h1 class="text-5xl text-white">Cristo Re Padova</h1>
+  <h1 class="text-5xl text-white p-2 border-round">Cristo Re Padova</h1>
 </div>
-<div>test</div>
+<div class="-mt-7">
+  <!-- Chi siamo -->
+  <div class="text-center">
+    <h1>Chi siamo?</h1>
+    <hr class="w-4" />
+    <p>
+      Siamo la comunità di Cristo Re, cerchiamo di far andare avanti diverse iniziative <br />
+      abbiamo sempre bisogno di una mano! Vienici ad aiutare!
+    </p>
+    <div class="w-full md:w-5 mx-auto my-4" style="aspect-ratio: 16 / 9">
+      <iframe
+        class="w-full h-full border-none"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2535.5781826286975!2d11.888911475755554!3d45.39108513831486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477edb04c804fd41%3A0x1582baa454a6fb2!2sChiesa%20Parrocchiale%20di%20Cristo%20Re!5e1!3m2!1sit!2sit!4v1769771306972!5m2!1sit!2sit"
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <hr class="w-4" />
+
+    <p>Per comunicare tra di noi usiamo questa community, unisciti anche te!</p>
+
+    <!-- Bottone per community wa -->
+    <a
+      href="https://chat.whatsapp.com/JSUG1Jv3la5LM3qJIPF59Z?mode=ac_t"
+      target="_blank"
+      icon="pi pi-whatsapp"
+      severity="success"
+      class="text-2xl"
+      style="text-decoration: none"
+      pButton
+    >
+      <span class="hidden md:inline">Iscriviti alla nostra community!</span>
+      <span class="inline md:hidden">Iscriviti alla community</span>
+    </a>
+    <h1>Orari delle messe</h1>
+    <hr class="w-4" />
+    <div class="w-8 md:w-4 mx-auto">
+      <p-table [value]="orari" class="">
+        <ng-template #header>
+          <tr>
+            <th class="text-center w-6">Giorno</th>
+            <th class="text-center w-6">Orari</th>
+          </tr>
+        </ng-template>
+        <ng-template #body let-orari>
+          <tr>
+            <td class="text-center">{{ orari.day }}</td>
+            <td class="text-center">{{ orari.hour }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>

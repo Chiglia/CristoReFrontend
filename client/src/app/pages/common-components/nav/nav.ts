@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SharedModule } from '../../../shared.module';
 import { DrawerModule } from 'primeng/drawer';
+import { ThemeService } from '../../../services/theme.service';
 
 @Component({
   selector: 'app-nav',
@@ -10,18 +11,17 @@ import { DrawerModule } from 'primeng/drawer';
 })
 export class Nav {
   menuItems = [
-    { label: 'Iniziative', link: '/about' },
-    { label: 'Bollettino', link: '/about' },
-    { label: 'Contatti', link: '/about' },
-    { label: 'Prenotazione sale', link: '/about' },
+    { label: 'Iniziative', link: '/iniziative' },
+    { label: 'Bollettino', link: '/bollettino' },
+    { label: 'Contatti', link: '/contatti' },
+    { label: 'Prenotazione sale', link: '/sale' },
   ];
 
   menuVisible = false;
 
+  constructor(public themeService: ThemeService) {}
+
   toggleTheme() {
-    const element = document.querySelector('html');
-    if (element) {
-      element.classList.toggle('my-app-dark');
-    }
+    this.themeService.toggle();
   }
 }
